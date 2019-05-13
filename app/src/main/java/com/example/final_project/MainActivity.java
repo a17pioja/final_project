@@ -43,31 +43,9 @@ public class MainActivity extends AppCompatActivity {
         ListView myListView = (ListView)findViewById(R.id.myListView);
         myListView.setAdapter(adapter);
 
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                //Toast.makeText(getApplicationContext(),adapter.getItem(position).info(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-
-
-
-
-        /*
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
+
     }
     private class FetchData extends AsyncTask<Void,Void,String> {
 
@@ -80,20 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 JSONArray json1 = new JSONArray(o);
-
-
-
-                Log.d("blaxie_json","I'm here");
+                Log.d("blaxie","I'm here");
                 int i=json1.length();
                 for (int x = 0; x < i; x++){
                     JSONObject jsonOb = json1.getJSONObject(x);
+                    Log.d("jsontest",jsonOb.getString("ID"));
                     Log.d("jsontest",jsonOb.getString("name"));
-                    Log.d("jsontest",jsonOb.getString("size"));
-                    Log.d("jsontest",jsonOb.getString("location"));
-
-                    String location = jsonOb.getString("location");
-                    String heightStr = jsonOb.getString("size");
-                    int height = Integer.parseInt(heightStr);
 
                     String ID = jsonOb.getString("ID");
                     String flash = jsonOb.getString("flash");
@@ -121,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // Implement a parsing code that loops through the entire JSON and creates objects
-            // of our newly created com.example.brom.listviewjsonapp.Mountain class.
         }
 
 
@@ -139,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 // Construct the URL for the Internet service
-                URL url = new URL("http://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=brom");
+                URL url = new URL("http://wwwlab.iit.his.se/a17pioja/android_project.json");
 
                 // Create the request to the PHP-service, and open the connection
                 urlConnection = (HttpURLConnection) url.openConnection();
@@ -189,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

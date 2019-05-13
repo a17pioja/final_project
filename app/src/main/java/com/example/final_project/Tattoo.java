@@ -22,4 +22,9 @@ public class Tattoo {
         used = inUsed;
 
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
