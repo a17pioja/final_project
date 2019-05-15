@@ -4,37 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.final_project.MainActivity">
+    tools:context=".TattooDetailsActivity">
 
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#222"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:titleTextColor="#fff" />
-
-    </android.support.design.widget.AppBarLayout>
 
     <ListView
-        android:id="@+id/myListView"
+        android:id="@+id/myDetailListView"
         android:layout_width="match_parent"
         android:layout_height="686dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:divider="#00000000"
         android:fontFamily="arial"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-
 </android.support.constraint.ConstraintLayout>

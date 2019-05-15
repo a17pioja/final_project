@@ -1,5 +1,6 @@
 package com.example.final_project;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -45,6 +46,26 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent myIntent = new Intent(getApplicationContext(), TattooDetailsActivity.class);
+
+                Tattoo t=adapter.getItem(position);
+
+                myIntent.putExtra("ID",t.getID());
+                myIntent.putExtra("Flash",t.getFlash());
+                myIntent.putExtra("Name",t.getName());
+                myIntent.putExtra("Type",t.getType());
+                myIntent.putExtra("Price",t.getPrice());
+                myIntent.putExtra("Size",t.getSize());
+                myIntent.putExtra("Shared",t.getShared());
+                myIntent.putExtra("Used",t.getUsed());
+                startActivity(myIntent);
+            }
+        });
 
     }
     private class FetchData extends AsyncTask<Void,Void,String> {
@@ -174,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
             return true;
         }
 

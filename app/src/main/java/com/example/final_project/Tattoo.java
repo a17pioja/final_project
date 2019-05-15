@@ -23,6 +23,50 @@ public class Tattoo {
 
     }
 
+    public String getID(){
+        String str=ID;
+        return str;
+    }
+
+    public String getFlash(){
+        String str=flash;
+        return str;
+    }
+
+    public String getName(){
+        String str=name;
+        return str;
+    }
+
+    public String getType(){
+        String str=type;
+        return str;
+    }
+
+    public String getPrice(){
+        int n=price;
+        String str=Integer.toString(n);
+        return str;
+    }
+
+    public String getSize(){
+        String str=size;
+        return str;
+    }
+
+    public String getShared(){
+        boolean b=shared;
+        String str=Boolean.toString(b);
+        return str;
+    }
+
+    public String getUsed(){
+        int n=used;
+        String str=Integer.toString(n);
+        return str;
+    }
+
+
     @Override
     public String toString() {
         return name;

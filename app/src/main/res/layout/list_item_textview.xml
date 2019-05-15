@@ -3,12 +3,12 @@
     android:id="@+id/my_item_textview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textSize="28sp"
+    android:height="60dp"
+    android:background="@null"
+    android:fontFamily="sans-serif"
     android:paddingLeft="20dp"
     android:paddingTop="15dp"
-    android:fontFamily="times new roman"
-    android:height="100dp"
-    android:background="@null"
-    >
+    android:textSize="24sp"
+    android:typeface="normal">
 
 </TextView>
