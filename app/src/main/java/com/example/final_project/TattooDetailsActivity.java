@@ -36,7 +36,7 @@ public class TattooDetailsActivity extends AppCompatActivity {
         adapterItem.add("Flash: " + tFlash);
         adapterItem.add("Name: " + tName);
         adapterItem.add("Type: " + tType);
-        adapterItem.add("Price: " + tPrice);
+        adapterItem.add("Price: " + tPrice + "USD");
         adapterItem.add("Size: " + tSize);
         adapterItem.add("Shared: " + tShared);
         adapterItem.add("Used: " + tUsed);

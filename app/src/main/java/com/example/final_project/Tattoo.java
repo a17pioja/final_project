@@ -1,6 +1,9 @@
 package com.example.final_project;
 
+import android.media.Image;
+
 public class Tattoo {
+    private Image photo;
     private String ID;
     private String flash;
     private String name;
@@ -11,7 +14,8 @@ public class Tattoo {
     private int used;
 
 
-    public Tattoo(String inID, String inFlash, String inName, String inType, int inPrice, String inSize, boolean inShared, int inUsed){
+    public Tattoo(Image inPhoto,String inID, String inFlash, String inName, String inType, int inPrice, String inSize, boolean inShared, int inUsed){
+        photo = inPhoto;
         ID = inID;
         flash = inFlash;
         name = inName;

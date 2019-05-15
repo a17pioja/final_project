@@ -1,6 +1,7 @@
 package com.example.final_project;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("jsontest",jsonOb.getString("ID"));
                     Log.d("jsontest",jsonOb.getString("name"));
 
+                    //Image photo = jsonOb.getImage("photo");
                     String ID = jsonOb.getString("ID");
                     String flash = jsonOb.getString("flash");
                     String name = jsonOb.getString("name");
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     String usedStr = jsonOb.getString("used");
                     int used = Integer.parseInt(usedStr);
 
-                    Tattoo t = new Tattoo(ID, flash, name, type, price, size, shared, used);
+                    Tattoo t = new Tattoo(photo, ID, flash, name, type, price, size, shared, used);
                     adapter.add(t);
 
 
