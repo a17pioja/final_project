@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(getApplicationContext(), TattooDetailsActivity.class);
 
                 Tattoo t=adapter.getItem(position);
-
+                myIntent.putExtra("Photo",t.getPhoto());
                 myIntent.putExtra("ID",t.getID());
                 myIntent.putExtra("Flash",t.getFlash());
                 myIntent.putExtra("Name",t.getName());
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("jsontest",jsonOb.getString("ID"));
                     Log.d("jsontest",jsonOb.getString("name"));
 
-                    //Image photo = jsonOb.getImage("photo");
+                    String photo = jsonOb.getString("photo");
                     String ID = jsonOb.getString("ID");
                     String flash = jsonOb.getString("flash");
                     String name = jsonOb.getString("name");
@@ -102,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
 
                     Tattoo t = new Tattoo(photo, ID, flash, name, type, price, size, shared, used);
                     adapter.add(t);
-
-
                 }
 
 

@@ -3,7 +3,7 @@ package com.example.final_project;
 import android.media.Image;
 
 public class Tattoo {
-    private Image photo;
+    private String photo;
     private String ID;
     private String flash;
     private String name;
@@ -14,7 +14,7 @@ public class Tattoo {
     private int used;
 
 
-    public Tattoo(Image inPhoto,String inID, String inFlash, String inName, String inType, int inPrice, String inSize, boolean inShared, int inUsed){
+    public Tattoo(String inPhoto,String inID, String inFlash, String inName, String inType, int inPrice, String inSize, boolean inShared, int inUsed){
         photo = inPhoto;
         ID = inID;
         flash = inFlash;
@@ -25,6 +25,11 @@ public class Tattoo {
         shared = inShared;
         used = inUsed;
 
+    }
+
+    public String getPhoto(){
+        String str=photo;
+        return str;
     }
 
     public String getID(){
