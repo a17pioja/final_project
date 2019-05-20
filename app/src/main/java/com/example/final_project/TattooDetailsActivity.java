@@ -8,7 +8,9 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -31,12 +33,12 @@ public class TattooDetailsActivity extends AppCompatActivity {
 
         String tPhoto=myIntent.getStringExtra("Photo");
         String tID=myIntent.getStringExtra("ID");
-        String tFlash=myIntent.getStringExtra("Flash");
+        final String tFlash=myIntent.getStringExtra("Flash");
         String tName=myIntent.getStringExtra("Name");
         String tType=myIntent.getStringExtra("Type");
         String tPrice=myIntent.getStringExtra("Price");
         String tSize=myIntent.getStringExtra("Size");
-        String tShared=myIntent.getStringExtra("Shared");
+        final String tShared=myIntent.getStringExtra("Shared");
         String tUsed=myIntent.getStringExtra("Used");
 
         new DownloadImageTask((ImageView) findViewById(R.id.imageView)).execute(tPhoto);
@@ -57,6 +59,26 @@ public class TattooDetailsActivity extends AppCompatActivity {
         adapterItem.add("Used: " + tUsed);
 
         myListView.setAdapter(adapterItem);
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent myIntentFlash = new Intent(getApplicationContext(), FlashActivity.class);
+                if(position==1){
+
+                myIntentFlash.putExtra("Flash",tFlash);
+                myIntentFlash.putExtra("Shared",tShared);
+                startActivity(myIntentFlash);
+                }
+
+                else{
+                    //do nothing
+                }
+            }
+        });
+
+
     }
 
     public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
