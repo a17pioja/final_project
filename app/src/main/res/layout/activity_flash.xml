@@ -6,27 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".FlashActivity">
 
-    <!--<ImageView
-        android:id="@+id/flashImageView"
+    <ImageView
+        android:id="@+id/imageViewFlash"
         android:layout_width="310dp"
         android:layout_height="310dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="flash_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />-->
+        tools:srcCompat="@tools:sample/avatars" />
 
     <ListView
         android:id="@+id/flashListView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="331dp"
+        android:layout_marginTop="50dp"
         android:divider="#00000000"
         android:fontFamily="arial"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFlash"
         tools:layout_editor_absoluteX="0dp" />
 
 </android.support.constraint.ConstraintLayout>

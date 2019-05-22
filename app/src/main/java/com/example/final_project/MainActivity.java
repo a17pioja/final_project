@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 myIntent.putExtra("Photo",t.getPhoto());
                 myIntent.putExtra("ID",t.getID());
                 myIntent.putExtra("Flash",t.getFlash());
+                myIntent.putExtra("FlashPhoto",t.getFlashPhoto());
                 myIntent.putExtra("Name",t.getName());
                 myIntent.putExtra("Type",t.getType());
                 myIntent.putExtra("Price",t.getPrice());
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     String photo = jsonOb.getString("photo");
                     String ID = jsonOb.getString("ID");
                     String flash = jsonOb.getString("flash");
+                    String flashPhoto = jsonOb.getString("flashPhoto");
                     String name = jsonOb.getString("name");
                     String type = jsonOb.getString("type");
                     String priceStr = jsonOb.getString("price");
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     String usedStr = jsonOb.getString("used");
                     int used = Integer.parseInt(usedStr);
 
-                    Tattoo t = new Tattoo(photo, ID, flash, name, type, price, size, shared, used);
+                    Tattoo t = new Tattoo(photo, ID, flash, flashPhoto, name, type, price, size, shared, used);
                     adapter.add(t);
                 }
 
@@ -196,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
+            Intent myIntent = new Intent(getApplicationContext(), AboutActivity.class);
+            startActivity(myIntent);
             return true;
         }
 

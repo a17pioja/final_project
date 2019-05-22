@@ -7,8 +7,10 @@
     android:background="@null"
     android:fontFamily="sans-serif"
     android:paddingLeft="20dp"
-    android:paddingTop="15dp"
-    android:textSize="24sp"
-    android:typeface="normal">
+    android:paddingTop="2dp"
+    android:paddingBottom="200dp"
+    android:textSize="22sp"
+    android:typeface="normal"
+    android:text="yes fam">
 
 </TextView>

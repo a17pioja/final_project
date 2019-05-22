@@ -31,8 +31,11 @@ public class FlashActivity extends AppCompatActivity {
 
         Intent myIntent = getIntent();
 
+        final String tFlashPhoto=myIntent.getStringExtra("FlashPhoto");
         final String tFlash=myIntent.getStringExtra("Flash");
         final String tShared=myIntent.getStringExtra("Shared");
+
+        new DownloadImageTask((ImageView) findViewById(R.id.imageViewFlash)).execute(tFlashPhoto);
 
         ArrayAdapter<String> adapterItem;
         adapterItem = new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview, R.id.my_item_textview);
@@ -43,5 +46,29 @@ public class FlashActivity extends AppCompatActivity {
 
         myListView.setAdapter(adapterItem);
 
+    }
+    public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView imageView;
+
+        public DownloadImageTask(ImageView imageView) {
+            this.imageView = imageView;
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            imageView.setImageBitmap(result);
+        }
     }
 }

@@ -6,6 +6,7 @@ public class Tattoo {
     private String photo;
     private String ID;
     private String flash;
+    private String flashPhoto;
     private String name;
     private String type;
     private int price;
@@ -14,10 +15,11 @@ public class Tattoo {
     private int used;
 
 
-    public Tattoo(String inPhoto,String inID, String inFlash, String inName, String inType, int inPrice, String inSize, boolean inShared, int inUsed){
+    public Tattoo(String inPhoto,String inID, String inFlash, String inFlashPhoto, String inName, String inType, int inPrice, String inSize, boolean inShared, int inUsed){
         photo = inPhoto;
         ID = inID;
         flash = inFlash;
+        flashPhoto = inFlashPhoto;
         name = inName;
         type = inType;
         price = inPrice;
@@ -39,6 +41,11 @@ public class Tattoo {
 
     public String getFlash(){
         String str=flash;
+        return str;
+    }
+
+    public String getFlashPhoto(){
+        String str=flashPhoto;
         return str;
     }
 
