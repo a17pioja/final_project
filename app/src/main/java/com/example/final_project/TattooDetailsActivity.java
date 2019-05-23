@@ -22,6 +22,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.io.InputStream;
+import java.nio.InvalidMarkException;
 
 public class TattooDetailsActivity extends AppCompatActivity {
 
@@ -86,6 +87,21 @@ public class TattooDetailsActivity extends AppCompatActivity {
         });
 
 
+
+
+        final ImageButton button = (ImageButton) findViewById(R.id.imageButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // your handler code here
+
+                /* Create the Intent */
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
 
@@ -115,26 +131,5 @@ public class TattooDetailsActivity extends AppCompatActivity {
         }
     }
 
-    //button
-    /*
-    public void addListenerOnButton() {
 
-        button = (ImageButton) findViewById(R.id.imageButton);
-
-        button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto", "", null));
-                startActivity(intent);
-
-            }
-
-        });
-
-
-    }
-    */
 }
