@@ -116,6 +116,7 @@ public class TattooDetailsActivity extends AppCompatActivity {
     }
 
     //button
+    /*
     public void addListenerOnButton() {
 
         button = (ImageButton) findViewById(R.id.imageButton);
@@ -133,5 +134,7 @@ public class TattooDetailsActivity extends AppCompatActivity {
 
         });
 
+
     }
+    */
 }

@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     android:height="60dp"
     android:background="@null"
-    android:fontFamily="sans-serif"
+    android:fontFamily="Roboto"
     android:paddingLeft="20dp"
     android:paddingTop="2dp"
-    android:paddingBottom="200dp"
+    android:paddingBottom="20dp"
     android:textSize="22sp"
+    android:textColor="@color/colorPrimaryDark"
     android:typeface="normal"
     android:text="yes fam">
 
